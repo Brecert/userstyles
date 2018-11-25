@@ -1,0 +1,69 @@
+/* ==UserStyle==
+@name           better-code-blocks-wire
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Better code blocks for wire
+@author         Me
+
+@preprocessor stylus
+==/UserStyle== */
+
+
+@-moz-document domain("app.wire.com") 
+  
+  default_color = #e0e2e4
+  
+  $attribute = #d64c5c
+  $attr = default_color
+  $string = #4cd656
+  $comment = #7d8c93
+  $keyword = #e784a2
+  $name = #e784a2
+  $title = #85b5c7
+  $symbol = #fff
+  $number = #2dd5d5
+  
+  $tag = #e8e2b7
+  
+  code, kbd, pre, samp
+    font: menlo !important
+  
+  .text pre
+    border-radius: 5px
+    background: desaturate(#272822, 10)
+    font-size: 90%
+    line-height: 130%
+    color: default_color
+    font-family: Menlo, "Source Code Pro", monospace !important
+
+  .hljs-
+    &keyword
+      color: $keyword
+    &attribute
+      color: $attribute
+    &string
+      color: $string
+    &comment
+      color: $comment
+      font-style: normal
+    &tag
+      color: $tag
+    &name, &built_in
+      color: $name
+      font-weight: bold
+    &symbol
+      color: $symbol
+      font-weight: bold
+    &title
+      color: $title
+    &number
+      color: $number
+    &regexp
+      color: #6b60aa
+    
+      
+  .hljs-type, .hljs-class .hljs-title
+    color: $title
+      
+  .hljs-literal, .hljs-variable, .hljs-template-variable, .hljs-tag .hljs-attr
+    color: $attr !important
