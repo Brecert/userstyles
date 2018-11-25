@@ -1,0 +1,33 @@
+/* ==UserStyle==
+@name           wire-animated-sidebar
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Animated sidebar
+@author         brecert
+
+@preprocessor stylus
+==/UserStyle== */
+
+@-moz-document domain("app.wire.com")
+  $purple = #6853b9
+  $pink = rgba(254, 94, 189, .8)
+  
+  @keyframes color_gradient
+    0%
+      background-position: 0% 0%
+    50%
+      background-position: 0% 50%
+    100%
+      background-position: 0% 100%
+  
+  .center-column:before
+    width = 5px
+    left: 0 - width
+    width: width
+    position: absolute
+    content: "\00a0"
+    height: 100vh
+    
+    background: linear-gradient(0deg, $purple, $pink, $purple, $pink, $purple)
+    background-size: 100% 200%
+    animation: color_gradient 17s linear infinite
