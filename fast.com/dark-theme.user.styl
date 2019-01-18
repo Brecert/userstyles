@@ -1,0 +1,26 @@
+/* ==UserStyle==
+@name           fast.com dark mode
+@namespace      github.com/brecert/userstyles
+@version        1.0.0
+@description    dark mode for fast.com
+@author         brecert
+
+@preprocessor stylus
+==/UserStyle== */
+
+$main = invert(#221f1f)
+@-moz-document domain("fast.com")
+  html, body
+    background-color: #222
+    color: invert(#d2d2d2)
+    color: #444
+    
+  div.logo
+    // fill: invert(#e50914)
+    filter: invert(100%) saturate(40%) brightness(0.5) contrast(400%) brightness(2.5) hue-rotate(180deg)
+  
+  .your-speed-message
+  .speed-units-container.succeeded
+  .speed-results-container.succeeded
+  .speed-progress-indicator.succeeded
+    color: $main
